@@ -1,0 +1,116 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Cliente</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ entity.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Apellido</th>
+                <td>{{ entity.apellido }}</td>
+            </tr>
+            <tr>
+                <th>Apellido2</th>
+                <td>{{ entity.apellido2 }}</td>
+            </tr>
+            <tr>
+                <th>Agente</th>
+                <td>{{ entity.agente }}</td>
+            </tr>
+            <tr>
+                <th>Colectivo</th>
+                <td>{{ entity.colectivo }}</td>
+            </tr>
+            <tr>
+                <th>Precio</th>
+                <td>{{ entity.precio }}</td>
+            </tr>
+            <tr>
+                <th>Descuento</th>
+                <td>{{ entity.descuento }}</td>
+            </tr>
+            <tr>
+                <th>Nif</th>
+                <td>{{ entity.nif }}</td>
+            </tr>
+            <tr>
+                <th>Direccion</th>
+                <td>{{ entity.direccion }}</td>
+            </tr>
+            <tr>
+                <th>Codigopostal</th>
+                <td>{{ entity.codigopostal }}</td>
+            </tr>
+            <tr>
+                <th>Localidad</th>
+                <td>{{ entity.localidad }}</td>
+            </tr>
+            <tr>
+                <th>Provincia</th>
+                <td>{{ entity.provincia }}</td>
+            </tr>
+            <tr>
+                <th>Fechanacimiento</th>
+                <td>{{ entity.fechanacimiento|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Fechadealta</th>
+                <td>{{ entity.fechadealta|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ entity.email }}</td>
+            </tr>
+            <tr>
+                <th>Telefono</th>
+                <td>{{ entity.telefono }}</td>
+            </tr>
+            <tr>
+                <th>Telefono2</th>
+                <td>{{ entity.telefono2 }}</td>
+            </tr>
+            <tr>
+                <th>Telefono3</th>
+                <td>{{ entity.telefono3 }}</td>
+            </tr>
+            <tr>
+                <th>Iban</th>
+                <td>{{ entity.iban }}</td>
+            </tr>
+            <tr>
+                <th>Notas</th>
+                <td>{{ entity.notas }}</td>
+            </tr>
+            <tr>
+                <th>Abonado</th>
+                <td>{{ entity.abonado }}</td>
+            </tr>
+            <tr>
+                <th>Firmaabono</th>
+                <td>{{ entity.firmaabono }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('cliente') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('cliente_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

@@ -1,0 +1,71 @@
+Rumbo\ProgramaBundle\Entity\Cliente:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: '20'
+        apellido:
+            type: string
+            length: '20'
+        apellido2:
+            type: string
+            length: '20'
+        agente:
+            type: integer
+        colectivo:
+            type: string
+            length: '20'
+        precio:
+            type: string
+            length: '5'
+        descuento:
+            type: string
+            length: '5'
+        nif:
+            type: string
+            length: '9'
+        direccion:
+            type: string
+            length: '50'
+        codigopostal:
+            type: string
+            length: '5'
+        localidad:
+            type: string
+            length: '20'
+        provincia:
+            type: string
+            length: '20'
+        fechanacimiento:
+            type: date
+        fechadealta:
+            type: date
+        email:
+            type: string
+            length: '50'
+        telefono:
+            type: string
+            length: '12'
+        telefono2:
+            type: string
+            length: '12'
+        telefono3:
+            type: string
+            length: '12'
+        iban:
+            type: string
+            length: '24'
+        notas:
+            type: text
+        abonado:
+            type: boolean
+        firmaabono:
+            type: boolean
+    lifecycleCallbacks: {  }

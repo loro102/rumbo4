@@ -1,0 +1,83 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Cliente list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Apellido2</th>
+                <th>Agente</th>
+                <th>Colectivo</th>
+                <th>Precio</th>
+                <th>Descuento</th>
+                <th>Nif</th>
+                <th>Direccion</th>
+                <th>Codigopostal</th>
+                <th>Localidad</th>
+                <th>Provincia</th>
+                <th>Fechanacimiento</th>
+                <th>Fechadealta</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Telefono2</th>
+                <th>Telefono3</th>
+                <th>Iban</th>
+                <th>Notas</th>
+                <th>Abonado</th>
+                <th>Firmaabono</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('cliente_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nombre }}</td>
+                <td>{{ entity.apellido }}</td>
+                <td>{{ entity.apellido2 }}</td>
+                <td>{{ entity.agente }}</td>
+                <td>{{ entity.colectivo }}</td>
+                <td>{{ entity.precio }}</td>
+                <td>{{ entity.descuento }}</td>
+                <td>{{ entity.nif }}</td>
+                <td>{{ entity.direccion }}</td>
+                <td>{{ entity.codigopostal }}</td>
+                <td>{{ entity.localidad }}</td>
+                <td>{{ entity.provincia }}</td>
+                <td>{% if entity.fechanacimiento %}{{ entity.fechanacimiento|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.fechadealta %}{{ entity.fechadealta|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.telefono }}</td>
+                <td>{{ entity.telefono2 }}</td>
+                <td>{{ entity.telefono3 }}</td>
+                <td>{{ entity.iban }}</td>
+                <td>{{ entity.notas }}</td>
+                <td>{{ entity.abonado }}</td>
+                <td>{{ entity.firmaabono }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('cliente_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('cliente_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('cliente_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
